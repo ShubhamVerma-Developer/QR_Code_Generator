@@ -1,25 +1,15 @@
-
-/* .App {
-    text-align: center;
-    margin-top: 100px;
-  } */
-  /* .container {
-    width: 60%;
-    margin: auto;
-    text-align: center;
-  }
-   */
-
    h1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-   }
+    color: white;
+  }
 
   textarea {
-    width: 600px;
-    height: 300px;
+    width: 800px;
+    height: 200px;
     margin-bottom: 20px;
-    border: 5px solid black;
+    border: 3px solid black;
     font-size: 30px;
+    border-radius: 8px;
   }
   
   .dropzone {
@@ -78,17 +68,7 @@
     width: 100%;
     margin-top:20px;
   }
-  /* .btn {
-    background-color: DodgerBlue;
-    border: none;
-    color: white;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 20px;
-    margin: 15px;
-  } */
   
-  /* Darker background on mouse-over */
   .btn:hover {
     background-color: RoyalBlue;
   }
@@ -98,11 +78,14 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 10px;
+    margin-bottom: 50px;
   }
   
   .grid-item {
     background-color: #eee7e7;
     padding: 20px;
+    border-radius: 2%;
+    border: 2px solid black;
   }
   
   .full-width {
