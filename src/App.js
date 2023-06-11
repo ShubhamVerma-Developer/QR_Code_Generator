@@ -2,11 +2,10 @@ import html2canvas from "html2canvas";
 import { QRCodeCanvas } from "qrcode.react";
 import React, { useState } from "react";
 import Dropzone from 'react-dropzone';
-import { AiFillCopy, AiOutlineDownload } from "react-icons/ai";
-
+import './App.css';
 function App() {
   const [qr, setqr] = useState("");
-  const [url, seturl] = useState("");
+  const [text, setText] = useState("");
   const [file, setFile] = useState(null);
   
   const QrCodeDownload = async () => {
@@ -25,10 +24,6 @@ function App() {
     }
   };
 
-  const QrCodeCopy = () => {
-    navigator.clipboard.writeText(qr);
-  };
-
   const handleDrop = (acceptedFiles) => {
     if (acceptedFiles && acceptedFiles.length > 0) {
       const uploadedFile = acceptedFiles[0];
@@ -37,18 +32,14 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto w-[320px]">
-      <div className="mb-4">
-        <p className="text-2xl">Generate QrCode</p>
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm  mb-2">Write something</label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          type="text"
-          onChange={(e) => seturl(e.target.value)}
-        />
-      </div>
+    <div className="grid-container">
+    <div className="App">
+      <h1>QR Code Generator</h1>
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Enter text"
+      ></textarea>
 
       <Dropzone onDrop={handleDrop}>
         {({ getRootProps, getInputProps }) => (
@@ -63,9 +54,10 @@ function App() {
         )}
       </Dropzone>
 
-      <div id="canvas" className="border p-2 relative">
-        <QRCodeCanvas
-          value={url}
+      <div id="canvas" className="qr-code-container">
+
+         <QRCodeCanvas
+          value={text}
           size={300}
           bgColor={"#ffffff"}
           fgColor={"#0a75ad"}
@@ -76,32 +68,32 @@ function App() {
             src: file,
             x: undefined,
             y: undefined,
-            height: 40,
-            width: 40,
-            borderRadius: 40/2,
+            height: 60,
+            width: 60,
             excavate: true,
+            style: {
+              borderRadius: 30,
+            },
           }}
+
+
+
         />
       </div>
-      <div className="flex w-[300px] mt-4 p-4 space-x-2 items-center justify-center">
+      <div className="">
         <button
           onClick={() => QrCodeDownload()}
-          className="flex items-center justify-between bg-transparent hover:bg-[#0a75ad] text-[#0a75ad] font-semibold hover:text-white py-2 px-4 border border-[#0a75ad] hover:border-transparent rounded"
+          className="btn"
         >
-          <AiOutlineDownload />
+          <i className="fa fa-download mr-3"></i>
           Download
-        </button>
-
-        <button
-          onClick={() => QrCodeCopy()}
-          className="flex items-center  justify-between bg-transparent hover:bg-[#0a75ad] text-[#0a75ad] font-semibold hover:text-white py-2 px-4 border border-[#0a75ad] hover:border-transparent rounded"
-        >
-          <AiFillCopy />
-          Copy
         </button>
       </div>
     </div>
+    </div>
+    
   );
+  
 }
 
 export default App;
