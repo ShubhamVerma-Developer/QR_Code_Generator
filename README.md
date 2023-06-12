@@ -1,4 +1,10 @@
-[visit for live demo](https://shubham25122001.github.io/QR_Code_Generator/)
+[Project URL : https://shubham25122001.github.io/QR_Code_Generator/](https://shubham25122001.github.io/QR_Code_Generator/)
+
+
+
+
+<img src="https://github.com/Shubham25122001/QR_Code_Generator/assets/101853403/b8276703-0a65-46dd-8236-a0f3b0635b35">
+
 
 # Getting Started with Create React App
 
