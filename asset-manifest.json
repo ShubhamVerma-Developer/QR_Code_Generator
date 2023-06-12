@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/QR_Code_Generator/static/css/main.36a73085.css",
+    "main.js": "/QR_Code_Generator/static/js/main.96d0d6b1.js",
+    "static/js/787.444defb3.chunk.js": "/QR_Code_Generator/static/js/787.444defb3.chunk.js",
+    "index.html": "/QR_Code_Generator/index.html",
+    "main.36a73085.css.map": "/QR_Code_Generator/static/css/main.36a73085.css.map",
+    "main.96d0d6b1.js.map": "/QR_Code_Generator/static/js/main.96d0d6b1.js.map",
+    "787.444defb3.chunk.js.map": "/QR_Code_Generator/static/js/787.444defb3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36a73085.css",
+    "static/js/main.96d0d6b1.js"
+  ]
+}
